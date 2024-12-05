@@ -22,7 +22,19 @@ public class Task1 {
 
     static String getAgeString(int age) {
 //        Место для вашего кода
-
-        return null; // Заглушка. При реализации - удалить
+        int def = age % 10;
+        if (age > 0) {
+            if (age > 4 && age < 21) {
+                return "Вам " + age + " лет";
+            } else {
+                switch (def) {
+                    case 1: return "Вам " + age + " год";
+                    case 2, 3, 4: return "Вам " + age + " года";
+                    default: return "Вам " + age + " лет";
+                }
+            }
+        } else {
+            return "Некорректный ввод";
+        }
     }
 }
